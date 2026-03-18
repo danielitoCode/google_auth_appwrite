@@ -48,24 +48,53 @@ Healthcheck:
 
 ## Variables (Cloudflare)
 
+Variables (no-secret):
+
 - `APPWRITE_ENDPOINT`
 - `APPWRITE_PROJECT_ID`
-- `APPWRITE_API_KEY` (Secret)
 - `GOOGLE_CLIENT_ID`
 - `CORS_ORIGIN` (opcional)
 - `ALLOW_CREATE` (opcional, `1` para permitir auto-registro si no llega `allowCreate=true`)
 
-## Deploy
+Secret:
+
+- `APPWRITE_API_KEY`
+
+## Montaje en Cloudflare (paso a paso)
+
+1) Login Wrangler:
 
 ```bash
-cd E:\Proyectos\Backend\NodeJS\Workers\google_auth
+npx wrangler login
+```
+
+2) Configura variables y secrets en Cloudflare Dashboard:
+
+- Workers & Pages → tu Worker → Settings → Variables
+  - agrega las Variables (no-secret) de arriba
+  - agrega `APPWRITE_API_KEY` como **Secret**
+
+(Alternativa CLI para el secret):
+
+```bash
+npx wrangler secret put APPWRITE_API_KEY
+```
+
+3) Deploy:
+
+```bash
 npm i
 npx wrangler deploy
 ```
 
+4) URL pública:
+
+- Si usas `workers.dev`, Wrangler te imprime la URL al desplegar.
+- Si usas dominio propio/route: Workers → Triggers → Routes.
+
 ## Dev local
 
-- Variables (sin commitear secretos): usa `.dev.vars` (Wrangler) o exporta env vars antes de `wrangler dev`.
+- Copia `.dev.vars.example` a `.dev.vars` (NO lo commitees) y ajusta valores.
 
 ```bash
 npx wrangler dev

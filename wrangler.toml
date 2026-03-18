@@ -2,10 +2,15 @@
 main = "src/index.ts"
 compatibility_date = "2026-03-15"
 
+# Defaults no-secret (puedes sobreescribir en Cloudflare Dashboard > Settings > Variables)
+[vars]
+ALLOW_CREATE = "0"
+
 # No pongas secretos aquí.
-# Configura estas variables en Cloudflare (Dashboard) como Secrets/Variables:
-# APPWRITE_ENDPOINT
-# APPWRITE_PROJECT_ID
-# APPWRITE_API_KEY
-# GOOGLE_CLIENT_ID
-# CORS_ORIGIN (opcional)
+# Configura estas variables en Cloudflare (Dashboard) como Variables/Secrets:
+# - APPWRITE_ENDPOINT
+# - APPWRITE_PROJECT_ID
+# - GOOGLE_CLIENT_ID
+# - CORS_ORIGIN (opcional)
+# Secret:
+# - APPWRITE_API_KEY
