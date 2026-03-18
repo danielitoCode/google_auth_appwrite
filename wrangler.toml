@@ -1,0 +1,11 @@
+﻿name = "alset-google-auth"
+main = "src/index.ts"
+compatibility_date = "2026-03-15"
+
+# No pongas secretos aquí.
+# Configura estas variables en Cloudflare (Dashboard) como Secrets/Variables:
+# APPWRITE_ENDPOINT
+# APPWRITE_PROJECT_ID
+# APPWRITE_API_KEY
+# GOOGLE_CLIENT_ID
+# CORS_ORIGIN (opcional)
