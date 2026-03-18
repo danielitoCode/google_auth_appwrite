@@ -1,0 +1,11 @@
+﻿# Copia este archivo a .dev.vars (NO lo commitees) para desarrollo local con `wrangler dev`.
+# Reemplaza los valores con tus reales.
+
+APPWRITE_ENDPOINT=https://YOUR_APPWRITE_ENDPOINT/v1
+APPWRITE_PROJECT_ID=YOUR_APPWRITE_PROJECT_ID
+GOOGLE_CLIENT_ID=YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com
+CORS_ORIGIN=http://localhost:5173
+ALLOW_CREATE=0
+
+# Secret (mejor ponerlo como Cloudflare Secret con `wrangler secret put`)
+APPWRITE_API_KEY=YOUR_APPWRITE_API_KEY
